@@ -17,3 +17,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.colorcolumn = "100"
 
 vim.opt.spelllang = { "en", "es" }
+
+vim.diagnostic.config {
+  float = { border = "rounded" }
+}

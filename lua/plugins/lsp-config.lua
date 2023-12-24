@@ -19,23 +19,26 @@ return {
       local servers = { "tsserver", "eslint", "gopls", "lua_ls" }
 
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+      local function on_attach(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+          vim.api.nvim_clear_autocmds({
+            group = augroup,
+          })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({ bufnr = bufnr, async = false })
+            end
+          })
+        end
+      end
+
+
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
-          on_attach = function(client, bufnr)
-            if client.supports_method("textDocument/formatting") then
-              vim.api.nvim_clear_autocmds({
-                group = augroup,
-              })
-              vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                  vim.lsp.buf.format({ bufnr = bufnr, async = false })
-                end
-              })
-            end
-          end
-        })
+          on_attach = on_attach })
       end
 
       lspconfig.eslint.setup({
@@ -48,6 +51,7 @@ return {
       })
 
       lspconfig.lua_ls.setup {
+        on_attach = on_attach,
         settings = {
           Lua = {
             diagnostics = {
