@@ -11,7 +11,7 @@ return {
     end,
   },
   {
-    "nvim-telescope/telescope-ui-select.nvim", tag = '0.1.5',
+    "nvim-telescope/telescope-ui-select.nvim",
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require("telescope").setup({
