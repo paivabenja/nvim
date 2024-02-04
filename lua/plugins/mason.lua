@@ -1,23 +1,22 @@
 return {
-	{
-		"williamboman/mason.nvim",
-    opts = {
-			ensure_installed = {
-				"lua_ls",
-        "stylua",
+  "williamboman/mason.nvim",
+  opts = {
+    ensure_installed = {
+      "lua_ls",
+      "stylua",
 
-				"tsserver",
-				"tailwindcss",
-				"prettierd",
-				"eslint-lsp",
+      "astro",
+      "tsserver",
+      "tailwindcss",
+      "prettierd",
+      "prettier",
+      "eslint-lsp",
 
-				"gopls",
-				"goimports",
-			},
-    }
-	},
+      "gopls",
+      "goimports",
 
-	{
-		"williamboman/mason-lspconfig.nvim",
-	},
+      "autopep8",
+      "pyright",
+    },
+  },
 }

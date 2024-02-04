@@ -13,8 +13,7 @@ return {
 		})
 
 		vim.api.nvim_create_autocmd("RecordingLeave", {
-			callback = function()
-				-- This is going to seem really weird!
+			callback = function() -- This is going to seem really weird!
 				-- Instead of just calling refresh we need to wait a moment because of the nature of
 				-- `vim.fn.reg_recording`. If we tell lualine to refresh right now it actually will
 				-- still show a recording occuring because `vim.fn.reg_recording` hasn't emptied yet.
@@ -44,16 +43,23 @@ return {
 
 		return {
 			options = {
-				component_separators = " ",
-				section_separators = { left = " ", right = " " },
+				theme = "auto",
+				component_separators = "|",
+				section_separators = { left = "", right = "" },
 			},
-
 			sections = {
+				lualine_a = {
+					{ "mode", separator = { left = " " }, right_padding = 2 },
+				},
 				lualine_x = {
 					{
 						"macro-recording",
 						fmt = show_macro_recording,
 					},
+				},
+
+				lualine_z = {
+					{ "location", separator = { right = " " }, left_padding = 2 },
 				},
 			},
 		}

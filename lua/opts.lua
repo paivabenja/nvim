@@ -1,6 +1,6 @@
 -- See plugin/colorscheme.lua for installed options
 vim.opt.termguicolors = true
-vim.cmd.colorscheme("nord")
+vim.cmd.colorscheme("catppuccin")
 
 -- vim.g.mapleader = " "
 vim.cmd("set expandtab")
@@ -23,3 +23,11 @@ vim.opt.colorcolumn = "100"
 vim.opt.spelllang = { "en", "es" }
 
 vim.opt.breakindent = true
+
+vim.diagnostic.config({
+	float = { border = "rounded" },
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded",
+})

@@ -6,6 +6,7 @@ return {
     "typescript",
     "typescriptreact",
     "html",
+    "astro",
   },
-  opts = {}
+  opts = {},
 }
