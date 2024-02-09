@@ -23,7 +23,6 @@ return {
     }
 
     dashboard.section.buttons.val = {
-      dashboard.button("e", "  New file", "<cmd>ene<CR>"),
       dashboard.button("<C-p>", "󰈞  Find file"),
       dashboard.button("<C-g>", "󰊄  Live grep"),
       dashboard.button(
@@ -31,6 +30,7 @@ return {
         "  Configuration",
         "<cmd>Telescope find_files search_dirs=~/.config/nvim<CR><cmd>cd ~/.config/nvim/ <CR>"
       ),
+      dashboard.button("e", "  New file", "<cmd>ene<CR>"),
       dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<CR>"),
       dashboard.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
     }

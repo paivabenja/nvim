@@ -5,8 +5,13 @@ return {
   -- install jsregexp (optional!).
   build = "make install_jsregexp",
 
+  dependencies = {
+    { "rafamadriz/friendly-snippets" },
+  },
+
   config = function()
     local ls = require("luasnip")
+
     vim.keymap.set({ "i" }, "<C-K>", function()
       ls.expand()
     end, { silent = true })
@@ -22,5 +27,7 @@ return {
         ls.change_choice(1)
       end
     end, { silent = true })
+
+    require("luasnip.loaders.from_vscode").lazy_load()
   end,
 }

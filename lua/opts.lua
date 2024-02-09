@@ -26,6 +26,7 @@ vim.opt.breakindent = true
 
 vim.diagnostic.config({
   float = { border = "rounded" },
+  virtual_text = true,
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {

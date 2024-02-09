@@ -33,13 +33,13 @@ return {
       override = {
         astro = {
           icon = "",
-          color = "#8142f5",
           cterm_color = "65",
           name = "Astro",
         },
       },
     },
   },
+
   {
     "alexghergh/nvim-tmux-navigation",
     opts = {

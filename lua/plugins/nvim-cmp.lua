@@ -2,10 +2,12 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
-    { "rafamadriz/friendly-snippets" },
     { "L3MON4D3/LuaSnip" },
+    { "rafamadriz/friendly-snippets" },
     { "hrsh7th/cmp-buffer" },
     { "onsails/lspkind.nvim" },
+    { "hrsh7th/cmp-path" },
+    { "saadparwaiz1/cmp_luasnip" },
     {
       -- https://youtu.be/_NiWhZeR-MY
       "roobert/tailwindcss-colorizer-cmp.nvim",
@@ -14,6 +16,7 @@ return {
       },
     },
   },
+
   config = function()
     -- Here is where you configure the autocompletion settings.
     local lsp_zero = require("lsp-zero")
@@ -35,6 +38,7 @@ return {
         { name = "buffer" },
         { name = "luasnip" },
         { name = "nvim_lua" },
+        { name = "path" },
       },
       preselect = "item",
       completion = {

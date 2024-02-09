@@ -8,24 +8,24 @@ return {
   -- 	},
   -- },
 
-  {
-    "navarasu/onedark.nvim",
-    opts = {
-      lualine = {
-        transparent = true,
-      },
-
-      code_style = {
-        comments = "italic",
-        keywords = "italic",
-        functions = "italic",
-        strings = "italic",
-        variables = "italic",
-      },
-
-      ending_tildes = true,
-    },
-  },
+  -- {
+  --   "navarasu/onedark.nvim",
+  --   opts = {
+  --     lualine = {
+  --       transparent = true,
+  --     },
+  --
+  --     code_style = {
+  --       comments = "italic",
+  --       keywords = "italic",
+  --       functions = "italic",
+  --       strings = "italic",
+  --       variables = "italic",
+  --     },
+  --
+  --     ending_tildes = true,
+  --   },
+  -- },
 
   -- { "monsonjeremy/onedark.nvim", branch = "treesitter" },
 
@@ -35,7 +35,7 @@ return {
     priority = 1000,
     opts = {
       flavour = "frappe",
-      transparent_background = true,
+      transparent_background = false,
     },
   },
 
